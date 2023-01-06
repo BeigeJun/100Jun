@@ -1,0 +1,19 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+
+int main() {
+    int a;
+    scanf("%d", &a);
+
+    if (60 > a)
+        printf("F");
+    else if (70 > a)
+        printf("D");
+    else if (80>a)
+        printf("C");
+    else if (90>a)
+        printf("B");
+    else if (100>= a)
+        printf("A");
+return 0;
+}
