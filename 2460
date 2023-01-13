@@ -1,0 +1,27 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+
+int main()
+{
+	int station[10] = { 0, };
+	int in_out_put = 0;
+	int all = 0;
+	int max = 0;
+	for (int i = 0; i < 10; i++)
+	{
+		scanf("%d", &in_out_put);
+		all = all - in_out_put;
+		scanf("%d", &in_out_put);
+		all = all + in_out_put;
+		station[i] = all;
+	}
+	max = station[0];
+	for (int i = 1; i < 9; i++)
+	{
+		if (max < station[i])
+		{
+			max = station[i];
+		}
+	}
+	printf("%d", max);
+}
