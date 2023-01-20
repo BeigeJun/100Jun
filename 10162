@@ -1,0 +1,28 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main()
+{
+	int time;
+	int mook;
+	int namugi;
+	int getsu[3];
+	scanf("%d", &time);
+	mook = time / 300;
+	namugi = time % 300;
+	getsu[0] = mook;
+	mook = namugi / 60;
+	namugi = namugi % 60;
+	getsu[1] = mook;
+	mook = namugi / 10;
+	namugi = namugi % 10;
+	getsu[2] = mook;
+	if (namugi == 0)
+	{
+		for (int i = 0; i != 3; i++)
+			printf("%d ",getsu[i]);
+	}
+	else
+		printf("-1");
+	return 0;
+}
