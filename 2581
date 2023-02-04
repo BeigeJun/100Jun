@@ -1,0 +1,41 @@
+#include<stdio.h>
+int main()
+{
+    int a,b;
+    int sum = 0;
+    int cnt = 0;
+    int min;
+    int sm;
+    scanf("%d", &a);
+    scanf("%d", &b);
+    for (int i = a; a < b+1; a++)
+    {
+        int namuji = 0;
+        int d;
+        d = a;
+        for (int i = 1; i < d + 1; i++)
+        {
+            if (d % i == 0)
+            {
+                namuji++;
+            }
+        }
+        if (namuji == 2)
+        {
+            sum = sum + d;
+            if (cnt == 0)
+            {
+                min = d;
+                cnt++;
+            }
+        }
+    }
+    if (sum == 0)
+    {
+        printf("-1");
+    }
+    else {
+        printf("%d\n", sum);
+        printf("%d", min);
+    }
+}
