@@ -1,0 +1,33 @@
+#include<stdio.h>
+
+int main()
+{
+	int HL[9][9];
+	for (int i = 0; i < 9; i++)
+	{
+		for (int j = 0; j < 9; j++)
+		{
+			int a;
+			scanf("%d", &a);
+			HL[i][j] = a;
+		}
+	}
+	int heng = 0;
+	int yeol = 0;
+	int max = HL[0][0];
+
+	for (int i = 0; i < 9; i++)
+	{
+		for (int j = 0; j < 9; j++)
+		{
+			if (max < HL[i][j])
+			{
+				max = HL[i][j];
+				heng = i;
+				yeol = j;
+			}
+		}
+	}
+	printf("%d\n", max);
+	printf("%d %d", heng+1, yeol+1);
+}
