@@ -1,0 +1,24 @@
+#include<stdio.h>
+
+int zegue(int num, int all)
+{
+	if (num == 0)
+	{
+		return 1;
+	}
+	if (num == 1)
+	{
+		return all;
+	}
+	all = all * (num - 1);
+	zegue(num - 1, all);
+}
+
+int main()
+{
+	int a;
+	scanf("%d", &a);
+	int all = a;
+	printf("%d", zegue(a, all));
+	return 0;
+}
