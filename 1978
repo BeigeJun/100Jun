@@ -1,0 +1,25 @@
+#include<stdio.h>
+int main()
+{
+   int a;
+   int sum = 0;
+   scanf("%d", &a);
+   for (int i = 0; i < a; i++)
+   {
+      int namuji = 0;
+      int d;
+      scanf("%d", &d);
+      for (int i = 1; i < d + 1; i++)
+      {
+         if (d % i == 0)
+         {
+            namuji++;
+         }
+      }
+      if (namuji == 2)
+      {
+         sum++;
+      }
+   }
+   printf("%d", sum);
+}
