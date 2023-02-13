@@ -1,0 +1,38 @@
+#include<stdio.h>
+
+int main()
+{
+	int a ,b;
+	int count = 0;
+	scanf("%d", &a);
+	b = a;
+	int z;
+
+	for (int i = 2; i < b; i++)
+	{
+		while (1)
+		{
+			if (a % i == 0)
+			{
+				printf("%d\n", i);
+				a = a / i;
+				count++;
+			}
+			else
+			{
+				break;
+			}
+		}
+	}
+	if (b == 1)
+	{
+
+	}
+	else{
+		if (count == 0)
+		{
+			printf("%d", b);
+
+		}
+	}
+}
