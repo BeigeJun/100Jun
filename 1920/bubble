@@ -1,0 +1,61 @@
+#include<stdio.h>
+
+int Ejin(int a,int * ab, int s, int e)
+{
+	int m = (s + e) / 2;
+	if (s == m || m == e)
+	{
+		return 0;
+	}
+	if (ab[m] == a)
+	{
+		return 1;
+	}
+	else if (ab[m] > a)
+	{
+		Ejin(a, ab, m + 1, e);
+	}
+	else
+	{
+		Ejin(a, ab, s, m-1);
+	}
+}
+
+int main()
+{
+	int a;
+	int ab[100000] = { 0, };
+	scanf("%d", &a);
+	for (int i = 0; i < a; i++)
+	{
+		scanf("%d", &ab[i]);
+	}
+
+
+	int b;
+	int bb[100000] = { 0, };
+	scanf("%d", &b);
+	for (int i = 0; i < b; i++)
+	{
+		scanf("%d", &bb[i]);
+	}
+
+
+	for (int i = 0; i < a; i++)
+	{
+		for (int j = 0; j < a-i -1; j++)
+		{
+			if (ab[j] > ab[j+1])
+			{
+				int temp = ab[j];
+				ab[j] = ab[j + 1];
+				ab[j + 1] = temp;
+			}
+		}
+	}
+
+	for (int i = 0; i < b; i++)
+	{
+		printf("%d\n",Ejin(bb[i], ab, 0, b));
+	}
+}
